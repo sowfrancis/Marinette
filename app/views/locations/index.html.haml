@@ -1,0 +1,24 @@
+.new_location
+	= render 'locations/form'
+.weather
+	%table.table.table-hover
+		%thead
+			%tr
+				%th Destination
+				%th Température
+				%th Humidité
+				%th Vent
+				%th Ciel
+				%th{:colspan => "5"}
+		%tbody
+			- @locations.each do |location|
+				%tr
+					%td= location.address
+					%td
+						= location.temperature
+						°C
+					%td= location.raintime
+					%td= location.windspeed
+					%td= location.cloud
+			
+		
